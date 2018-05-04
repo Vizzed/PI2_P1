@@ -10,8 +10,8 @@
  */
 public class Stack {
 
-    protected final int a[];
-    protected int top ;
+    private final int a[];
+    private int top ;
 
     public Stack(int t) {
         a = new int[t];
@@ -45,5 +45,17 @@ public class Stack {
         for(int i=0;i<=top;i++){
             System.out.println(a[i]);
         }
+    }
+
+    public void setTop(int top) {
+        this.top = top;
+    }
+
+    public int[] getA() {
+        return a;
+    }
+
+    public int getTop() {
+        return top;
     }
 }

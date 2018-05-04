@@ -13,21 +13,21 @@ public class StackU extends Stack {
     public StackU(int t, int wert) {
         super(t);
         for (int i = 0; i < t; i++) {
-            a[i] = wert + i;
-            top++;
+            super.push(wert);
+            wert++;
         }
     }
 
     boolean stackEmpty() {
-        if (top == -1) {
+        if (super.getTop()== -1) {
             return true;
         }
         return false;
     }
 
     int push(int array[]) {
-        if (top == -1) {
-            if (array.length <= a.length) {
+        if (super.getTop() == -1) {
+            if (array.length <= super.getA().length) {
                 for (int i = 0; i < array.length; i++) {
                     super.push(array[i]);
 
@@ -35,7 +35,7 @@ public class StackU extends Stack {
                 return 0;
             }
         } else {
-            if (array.length <= (a.length - (top+1))) {
+            if (array.length <= (super.getA().length - (super.getTop()+1))) {
                 for (int i = 0; i < array.length; i++) {
                     super.push(array[i]);
                 }
@@ -43,6 +43,18 @@ public class StackU extends Stack {
             }
 
         }
+        return -1;
+    }
+    int pop(int n){
+        int zahl=0;
+        if((super.getTop()+1)>=n){
+            for (int i = 0; i < n; i++) {
+                zahl=super.pop(); 
+            }
+            return zahl;
+        }
+       // if (super.getTop() == -1)return -1;
+       // if(super.getA().length<=n)return -1;
         return -1;
     }
 }

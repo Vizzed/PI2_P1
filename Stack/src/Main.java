@@ -30,7 +30,8 @@ public class Main {
             System.out.println("3: fuer printen des StackInhaltes");
             System.out.println("4: stack leer?");
             System.out.println("5: fuer pushen eines arrays");
-            System.out.println("6: fuer das Beenden des Programms");
+            System.out.println("6:erweirte pop methode ");
+            System.out.println("7:fuer das Beenden des Programms");
 
             eingabe = Integer.parseInt(br.readLine());
             switch (eingabe) {
@@ -82,7 +83,17 @@ public class Main {
                     else System.out.println("Nicht Erfolgreich");
                     break;
                 }
-                case 6: {
+                case 6:
+                    int temp2;
+                    
+                    System.out.println("Geben sie einen Wert ein :");
+                    temp2=Integer.parseInt(br.readLine());
+                    temp2=su.pop(temp2);
+                    if(temp2 ==-1)System.out.println("Ungültige Eingabe");
+                    else System.out.println("letzter Pop-wert"+temp2);
+                    break;
+                
+                case 7: {
                     loop = false;
                     break;
                 }
